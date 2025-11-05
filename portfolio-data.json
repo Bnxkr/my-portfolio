@@ -1,0 +1,91 @@
+{
+    "profilePicture": "images/ashleymalepeprofilepicture.jpg",
+  
+    "uiux": [
+      {
+        "image": "images/website1.png",
+        "title": "University of Johannesburg Page Redesign",
+        "description": "Redesign of the incident reporting page for the University of Johannesburg. The project ran over 6 months with iterative improvements to layout, UX flow, and accessibility.",
+        "link": "https://share.vidyard.com/watch/5xWaY99TUppMuzw4zQJibA"
+      },
+      {
+        "image": "images/website2.png",
+        "title": "OScript App Design",
+        "description": "Co-designed an app currently in development. I focused on the visual design system while collaborating with a partner responsible for wireframing and user journey mapping.",
+        "link": "https://www.figma.com/design/j6JdwPerQslYsyJ1h1CLZm/Medi-Go?node-id=0-1&t=JKg25X3JF6nKNO1p-1"
+      }
+    ],
+  
+    "emailCampaigns": [
+      {
+        "image": "images/eblast1.png",
+        "title": "Client (Melissa) eLetter",
+        "description": "Developed in Dreamweaver using HTML & CSS based on client briefing. Designed to boost discovery of a priority service offering.",
+        "link": "emails/Melissa_1028.html"
+      },
+      {
+        "image": "images/eblast2.png",
+        "title": "Client (SUSE) eLetter",
+        "description": "Designed and built using Adobe Marketo Engage and VS Code. Supported promotion of a Tech Talk campaign I managed.",
+        "link": "emails/SUSE_1021final.html"
+      }
+    ],
+  
+    "posters": [
+      {
+        "image": "images/poster1.png",
+        "title": "World Water Week Banner",
+        "description": "Large-scale 4m x 4m banner displayed at SIWI's 2024 World Water Week Symposium."
+      },
+      {
+        "image": "images/poster2.png",
+        "title": "Training Name Plate",
+        "description": "Developed a standardized training nameplate template including cultural greeting cues and promotional event messaging."
+      },
+      {
+        "image": "images/thumbnail1.png",
+        "title": "Competition Promo Video",
+        "description": "Designed and narrated a promotional competition campaign video to boost event social engagement.",
+        "link": "https://www.canva.com/design/DAGMXQtqDX0/i5c_hO_FWb354p8fPEMuRg/watch?utm_content=DAGMXQtqDX0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks"
+      },
+      {
+        "image": "images/logo1.png",
+        "title": "Client (IHP) Logo Design",
+        "description": "Branding development project focused on evolving the visual identity and ecru color palette."
+      },
+      {
+        "image": "images/flyer1.png",
+        "title": "Client (Woodside Sanctuary) Flyer",
+        "description": "Flyer designed for a community-focused organisation supporting intellectually differently-abled participants."
+      }
+    ],
+  
+    "articles": [
+      {
+        "image": "images/article.png",
+        "title": "Women in STEM: Bridging the Gender Gap",
+        "description": "Interview-based article highlighting challenges faced by women in groundwater management. Published by international development organisations including The World Bank.",
+        "link": "https://blogs.worldbank.org/en/water/namibia--bridging-the-gender-gap-in-groundwater-resources-manage0"
+      },
+      {
+        "image": "images/article2.png",
+        "title": "Groundwater Resilience",
+        "description": "Article exploring groundwater's role in climate resilience, drought response, and sustainable livelihood strategies.",
+        "link": "https://www.ciwaprogram.org/blog/building-drought-resilience-nurtures-livelihoods-and-hope-in-southern-africa/"
+      }
+    ],
+  
+    "campaigns": [
+      {
+        "image": "images/campaign1.png",
+        "title": "Live Webinar Campaign",
+        "link": "https://www.canva.com/design/DAG3yeqCm8I/NStKzy43xLD7gBmUGSTXcg/view?utm_content=DAG3yeqCm8I&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks"
+      },
+      {
+        "image": "images/campaign2.png",
+        "title": "eBlast Campaign",
+        "link": "https://www.canva.com/design/DAG3yUb7bH4/PDjLNXdHDJhezq8SH_tjMQ/view?utm_content=DAG3yUb7bH4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks"
+      }
+    ]
+  }
+  

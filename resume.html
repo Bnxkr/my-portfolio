@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Resume — Ashley</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="hero-section">
+      <div class="profile-image" style="background-image:url('images/ashleymalepeprofilepicture.jpg')"></div>
+      <div class="hero-text"><h1 class="site-title">Resume</h1><p class="site-subtitle">Download or view my resume.</p></div>
+    </header>
+
+    <main class="portfolio-container">
+      <section class="portfolio-section">
+        <h2 class="section-title">Curriculum Vitae</h2>
+        <p>If you have uploaded your resume PDF to <code>/assets/Ashley_Malepe_Resume.pdf</code> it will be available here.</p>
+        <p>
+          <a href="assets/Ashley_Malepe_Resume.pdf" class="nav-link" download>Download Resume (PDF)</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">© <span id="year2"></span> Ashley Malepe</footer>
+  </div>
+<script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+</body>
+</html>

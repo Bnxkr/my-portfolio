@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ashley Malepe — My Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Original site styling (extracted & cleaned) -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="container">
+    <header class="hero-section">
+      <div class="profile-image" id="profileImage" style="background-image:url('images/ashleymalepeprofilepicture.jpg')">
+        <div class="profile-picture" id="profilePictureFill"></div>
+      </div>
+
+      <div class="hero-text">
+        <h1 class="site-title">Ashley Malepe</h1>
+        <p class="site-subtitle">Marketing & Communications Professional — Portfolio</p>
+        <nav class="main-nav">
+          <a href="#uiux" class="nav-link">UI/UX Design</a>
+          <a href="#emailCampaigns" class="nav-link">Email Campaigns</a>
+          <a href="#posters" class="nav-link">Poster & Logo Design</a>
+          <a href="#articles" class="nav-link">Articles</a>
+          <a href="#campaigns" class="nav-link">Campaign Management</a>
+          <a href="resume.html" class="nav-link">Resume</a>
+          <a href="contact.html" class="nav-link">Email Me</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="mainContent" class="portfolio-container">
+      <!-- Sections injected by JS -->
+    </main>
+
+    <footer class="footer">
+      © <span id="year"></span> Ashley Malepe · Hosted on GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Fetch JSON and render sections using original markup style (cards/slides)
+    async function loadData() {
+      try {
+        const res = await fetch('portfolio-data.json', {cache: 'no-store'});
+        if (!res.ok) throw new Error('portfolio-data.json not found');
+        const data = await res.json();
+
+        // set profile picture
+        if (data.profilePicture) document.getElementById('profileImage').style.backgroundImage = `url('${data.profilePicture}')`;
+
+        const main = document.getElementById('mainContent');
+        main.innerHTML = '';
+
+        function createSection(id, title, items) {
+          const sec = document.createElement('section');
+          sec.className = 'portfolio-section';
+          sec.id = id;
+          sec.innerHTML = `<h2 class="section-title">${title}</h2><div class="section-grid"></div>`;
+          main.appendChild(sec);
+          const grid = sec.querySelector('.section-grid');
+
+          if (!items || items.length === 0) {
+            grid.innerHTML = '<p class="small">No items added yet.</p>';
+            return;
+          }
+
+          items.forEach(it => {
+            const card = document.createElement('article');
+            card.className = 'card';
+            const img = it.image ? `<div class="card-image" style="background-image:url('${it.image}')"></div>` : '';
+            const desc = it.description ? `<p class="card-desc">${escapeHtml(it.description)}</p>` : '';
+            const link = it.link ? `<a class="card-link" href="${it.link}" target="_blank" rel="noopener noreferrer">Open</a>` : '';
+            card.innerHTML = `${img}<h3 class="card-title">${escapeHtml(it.title || '')}</h3>${desc}${link}`;
+            grid.appendChild(card);
+          });
+        }
+
+        createSection('uiux', 'UI/UX Design', data.uiux || []);
+        createSection('emailCampaigns', 'Email Campaigns', data.emailCampaigns || []);
+        createSection('posters', 'Poster & Logo Design', data.posters || []);
+        createSection('articles', 'Articles', data.articles || []);
+        createSection('campaigns', 'Campaign Management', data.campaigns || []);
+
+      } catch (e) {
+        document.getElementById('mainContent').innerHTML = `<p style="color:crimson">Error: ${e.message}</p>`;
+        console.error(e);
+      }
+    }
+
+    function escapeHtml(s) { if (!s) return ''; return String(s).replace(/[&<>"']/g, (m)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+    loadData();
+  </script>
+</body>
+</html>
