@@ -1,270 +1,36 @@
+
+
 :root{
-  --bg: #f8fafe;
-  --muted: #5d6d7e;
-  --accent1: #667eea;   /* purple/blue */
-  --accent2: #ff6b6b;   /* warm red */
-  --surface: rgba(255,255,255,0.9);
-  --glass: rgba(255,255,255,0.65);
-  --shadow-strong: 0 18px 40px rgba(33,42,77,0.12);
-  --shadow-soft: 0 8px 20px rgba(33,42,77,0.06);
-  --radius-lg: 16px;
-  --transition-fast: 180ms cubic-bezier(.2,.9,.3,1);
-  --transition-smooth: 320ms cubic-bezier(.2,.9,.3,1);
-}
-
-/* base reset */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color:#233;
-  background: linear-gradient(135deg, var(--bg) 0%, #e8f4f8 100%);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.45;
-}
-
-/* layout container */
-.container{
-  max-width:1200px;
-  margin:0 auto;
-  padding:28px;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
-
-/* HERO: keep row layout on wide screens, centre on small */
-.hero-section{
-  display:flex;
-  gap:28px;
-  align-items:center;
-  padding:28px 0;
-  /* subtle glass surface so text reads on varied backgrounds */
-  background: linear-gradient(180deg, rgba(255,255,255,0.0), rgba(255,255,255,0.02));
-}
-
-/* PROFILE (instagram-style ring + inner photo) */
-.profile-image{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  position:relative;
-  overflow:visible; /* ring can extend slightly */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  /* outer ring gradient - tuned to feel modern & designer-like */
-  background: conic-gradient(from 220deg, #ff6b6b, #ff8a6b, #8a6bff, #5f7aff, #29aadc);
-  padding:6px; /* ring thickness */
-  box-shadow: var(--shadow-strong);
-  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
-}
-
-/* subtle hover micro-interaction */
-.profile-image:hover{
-  transform: translateY(-6px) rotate(0.5deg);
-  box-shadow: 0 26px 60px rgba(33,42,77,0.14);
-}
-
-/* inner "photo container" — keeps uploaded image inside ring */
-.profile-picture{
-  position:absolute;
-  inset:6px; /* match outer padding so inner sits perfectly */
-  border-radius:50%;
-  background-size: contain;      /* IMPORTANT: contain shows entire face (no aggressive crop) */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #fff;        /* neutral fill when image aspect ratio differs */
-  transition: transform var(--transition-fast), filter var(--transition-fast);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06) inset;
-  z-index:2;
-}
-
-/* fallback if you inject an <img> inside .profile-picture (keeps logic robust) */
-.profile-picture img{
-  width:100%;
-  height:100%;
-  object-fit:contain; /* keeps the whole face visible, prevents zoom/crop */
-  border-radius:50%;
-  display:block;
-}
-
-/* optional small sparkle ring animation (subtle, not flashy) */
-.profile-image::after{
-  content:"";
-  position:absolute;
-  inset:-4px;
-  border-radius:50%;
-  pointer-events:none;
-  opacity:0.06;
-  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.25), transparent 10%),
-              radial-gradient(circle at 70% 80%, rgba(255,255,255,0.15), transparent 10%);
-  mix-blend-mode: screen;
-}
-
-/* HERO TEXT */
-.hero-text{flex:1; min-width:220px}
-.site-title{
-  font-size:34px;
-  margin:0 0 6px;
-  font-weight:800;
-  letter-spacing:-0.02em;
-  color: #1f2a46;
-  line-height:1.02;
-  display:block;
-}
-.site-subtitle{
-  margin:0;
-  color:var(--muted);
-  font-weight:500;
-}
-
-/* NAV / BUTTONS (modern pill buttons with lift on hover) */
-/* keep compatibility with .nav-link and .btn if both used */
-.main-nav{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
-.nav-link, .btn {
-  padding:10px 16px;
-  border-radius:999px;
-  background: var(--surface);
-  box-shadow: var(--shadow-soft);
-  text-decoration:none;
-  color:#123;
-  font-weight:600;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
-  border: 0;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* accent button variants (preserve your color tokens) */
-.btn-primary, .nav-link.primary {
-  background: linear-gradient(135deg, var(--accent2) 0%, #ee5a24 100%);
-  color: white;
-  box-shadow: 0 10px 30px rgba(238,90,36,0.18);
-}
-.btn-secondary, .nav-link.secondary {
-  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
-  color:white;
-  box-shadow: 0 10px 30px rgba(9,132,227,0.12);
-}
-.btn-outline, .nav-link.outline {
-  background: rgba(255,255,255,0.95);
-  color:#2c3e50;
-  border: 1px solid rgba(44,62,80,0.06);
-}
-
-/* lift and subtle shadow on hover (affords the "lift" tactile feel) */
-.nav-link:hover, .btn:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(31,42,77,0.12);
-}
-
-/* focus-visible accessibility */
-.nav-link:focus, .btn:focus{
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(102,126,234,0.12);
-}
-
-/* PORTFOLIO wrapper & cards (glass + soft corners) */
-.portfolio-container{margin-top:22px;display:grid;gap:20px}
-.portfolio-section{
-  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.80));
-  padding:20px;
-  border-radius:16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
-/* section title */
-.section-title{
-  margin:0 0 12px;
-  font-size:20px;
-  font-weight:700;
-  color:#2c3e50;
-  text-align:left;
-}
-
-/* grid for items */
-.section-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-.card{
-  background: #fff;
-  border-radius:12px;
-  padding:12px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.04);
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-.card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(31,42,77,0.08);
-}
-
-/* card-image: changed to contain so images show fully and not zoomed */
-.card-image{
-  height:180px;
-  border-radius:8px;
-  background-size: contain;   /* SHOWS whole image, avoids awkward crop */
-  background-position:center;
-  background-repeat:no-repeat;
-  margin-bottom:10px;
-  background-color:#f6f8fb;    /* neutral canvas */
-  display:block;
-  overflow:hidden;
-}
-
-/* many portfolio items use <img> inside placeholder-image — ensure they display nicely */
-.placeholder-image, .card-image{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.placeholder-image img{
-  width:100%;
-  height:100%;
-  object-fit:contain;  /* IMPORTANT: keeps entire asset visible */
-  border-radius:8px;
-  display:block;
-  transition: transform var(--transition-smooth);
-}
-.placeholder-image img:hover{
-  transform: scale(1.03);
-}
-
-/* card text */
-.card-title{margin:6px 0 8px;font-size:16px;font-weight:700;color:#24314a}
-.card-desc{margin:0;color:var(--muted);font-size:14px;line-height:1.4}
-.card-link{display:inline-block;margin-top:10px;color:var(--accent1);font-weight:700;text-decoration:none}
-
-/* footer */
-.footer{text-align:center;margin:28px 0;color:var(--muted)}
-
-/* small screens: preserve your adjustments but slightly modernised */
-@media (max-width:700px){
-  .hero-section{
-    flex-direction:column;
-    text-align:center;
-    gap:16px;
+    --bg:#f8fafe; --muted:#5d6d7e; --accent1:#667eea; --accent2:#ff6b6b;
   }
-  .profile-image{width:140px;height:140px;padding:5px}
-  .profile-picture{inset:5px}
-  .site-title{font-size:24px}
-  .main-nav{justify-content:center}
-  .container{padding:18px}
-}
-
-/* helper: accessible image replacement for background images (if JS sets data URIs) */
-[data-bg]{
-  background-size: contain !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-}
+  
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#233;background:linear-gradient(135deg,var(--bg) 0%, #e8f4f8 100%);-webkit-font-smoothing:antialiased}
+  .container{max-width:1200px;margin:0 auto;padding:28px;min-height:100vh;display:flex;flex-direction:column}
+  .hero-section{display:flex;gap:24px;align-items:center;padding:28px 0}
+  .profile-image{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);position:relative;overflow:hidden;box-shadow:0 20px 40px rgba(102,126,234,0.12)}
+  .profile-picture{position:absolute;inset:0;background-size:cover;background-position:center;border-radius:50%}
+  .hero-text{flex:1}
+  .site-title{font-size:34px;margin:0 0 6px;font-weight:800;letter-spacing:-0.02em}
+  .site-subtitle{margin:0;color:var(--muted)}
+  .main-nav{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+  .nav-link{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,0.9);box-shadow:0 6px 18px rgba(0,0,0,0.06);text-decoration:none;color:#123;font-weight:600}
+  .portfolio-container{margin-top:22px;display:grid;gap:20px}
+  .portfolio-section{background:rgba(255,255,255,0.95);padding:20px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+  .section-title{margin:0 0 12px;font-size:20px;font-weight:700;color:#2c3e50;text-align:left}
+  .section-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .card{background:#fff;border-radius:12px;padding:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04);overflow:hidden}
+  .card-image{height:180px;border-radius:8px;background-size:cover;background-position:center;margin-bottom:10px}
+  .card-title{margin:6px 0 8px;font-size:16px}
+  .card-desc{margin:0;color:var(--muted);font-size:14px;line-height:1.4}
+  .card-link{display:inline-block;margin-top:10px;color:var(--accent1);font-weight:700;text-decoration:none}
+  .footer{text-align:center;margin:28px 0;color:var(--muted)}
+  
+  /* small screens */
+  @media (max-width:700px){
+    .hero-section{flex-direction:column;text-align:center}
+    .profile-image{width:140px;height:140px}
+    .site-title{font-size:24px}
+    .main-nav{justify-content:center}
+  }
+  
