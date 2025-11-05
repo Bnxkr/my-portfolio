@@ -21,13 +21,13 @@
         "image": "eblast1.png",
         "title": "Client (Melissa) eLetter",
         "description": "Developed in Dreamweaver using HTML & CSS based on client briefing. Designed to boost discovery of a priority service offering.",
-        "link": "emails/Melissa_1028.html"
+        "link": "Melissa_1028.html"
       },
       {
         "image": "eblast2.png",
         "title": "Client (SUSE) eLetter",
         "description": "Designed and built using Adobe Marketo Engage and VS Code. Supported promotion of a Tech Talk campaign I managed.",
-        "link": "emails/SUSE_1021final.html"
+        "link": "SUSE_1021final.html"
       }
     ],
   
