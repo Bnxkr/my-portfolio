@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <!-- v1.9.1 -->
+  <head> 
+    <title>Suse</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"> 
+    <meta name="robots" content="noindex,nofollow"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="color-scheme" content="light dark"> 
+    <meta name="supported-color-schemes" content="light dark only"> 
+    <meta content="telephone=no" name="format-detection"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <!-- Marketo Variable Definitions --> 
+    <meta mktomodulescope="true" class="mktoString" id="BannerBGImg" mktoname="Background Image" default="https://more.suse.com/rs/937-DCH-261/images/marketo_banner_94.png"> 
+    <meta mktomodulescope="true" class="mktoString" id="LightBannerBGImg" mktoname="Light Background Image" default="https://more.suse.com/rs/937-DCH-261/images/Healthcare_600X275.png?version=0"> 
+    <meta mktomodulescope="true" class="mktoNumber" id="olh1" mktoname="Outlook Height" default="275"> 
+    <!-- Banner Tags --> 
+    <meta mktomodulescope="true" class="mktoString" id="banner-labeltext" mktoname="Label Text" default="Live events"> 
+    <meta mktomodulescope="true" class="mktoString" id="banner-toprighttext" mktoname="Top Right Text" default="1st &amp; 2nd November 2024 - Berlin"> 
+    <meta mktomodulescope="true" class="mktoString" id="banner-maintitle" mktoname="Banner main title" default="Title of the event or invitation"> 
+    <meta mktomodulescope="true" class="mktoString" id="banner-subtitle" mktoname="Banner subtitle" default="Some subtitle with more details"> 
+    <meta mktomodulescope="true" class="mktoString" id="banner-ctatext" mktoname="CTA Text" default="Register for free"> 
+    <meta mktomodulescope="true" class="mktoString" id="banner-ctaurl" mktoname="CTA URL" default> 
+    <!-- Section01 Tags --> 
+    <meta mktomodulescope="true" class="mktoString" id="agenda-highlights" mktoname="Agenda highlights" default="Event highlights"> 
+    <meta mktomodulescope="true" class="mktoString" id="speakers-title" mktoname="Speakers Title" default="Meet your Hosts"> 
+    <!-- SIngle agenda module --> 
+    <meta mktomodulescope="true" class="mktoString" id="si-agenda-time" mktoname="Time" default="9AM - 10 AM PST"> 
+    <meta mktomodulescope="true" class="mktoString" id="si-agenda-title" mktoname="Title" default="Title of workshop/presentation"> 
+    <meta mktomodulescope="true" class="mktoString" id="si-agenda-description" mktoname="Description" default="An mel corpora consectetuer. Duo veri eripuit honestatis ei. Mandamus expetenda has ex." allowhtml="true"> 
+    <!-- speaker module --> 
+    <meta mktomodulescope="true" class="mktoString" id="s-speaker_1" mktoname="Speaker 1 Name" default="Sample Name"> 
+    <meta mktomodulescope="true" class="mktoString" id="s-speaker_1_job-title" mktoname="Speaker 1 Job Title" default="Sample Job Title"> 
+    <meta mktomodulescope="true" class="mktoString" id="s-speaker_2" mktoname="Speaker 2 Name" default="Sample Name"> 
+    <meta mktomodulescope="true" class="mktoString" id="s-speaker_2_job-title" mktoname="Speaker 2 Job Title" default="Sample Job Title"> 
+    <meta mktomodulescope="true" class="mktoString" id="s-speaker_3" mktoname="Speaker 3 Name" default="Sample Name"> 
+    <meta mktomodulescope="true" class="mktoString" id="s-speaker_3_job-title" mktoname="Speaker 3 Job Title" default="Sample Job Title"> 
+    <!-- single speaker module --> 
+    <meta mktomodulescope="true" class="mktoString" id="s-speaker" mktoname="Speaker Name" default="Sample Name"> 
+    <meta mktomodulescope="true" class="mktoString" id="s-speaker_job-title" mktoname="Speaker Job Title" default="Sample Job Title"> 
+    <!-- title module --> 
+    <meta mktomodulescope="true" class="mktoString" id="title-text" mktoname="Title" default="Title goes here"> 
+    <!--Only CTA Tags --> 
+    <meta mktomodulescope="true" class="mktoString" id="CTAURL" mktoname="CTA URL" default="https://www.suse.com/contact/"> 
+    <meta mktomodulescope="true" class="mktoString" id="CTAText" mktoname="CTA Text" default="Arrange a meeting"> 
+    <meta mktomodulescope="true" class="mktoString" id="googleCTAURL" mktoname="Google Cal URL" default> 
+    <meta mktomodulescope="true" class="mktoString" id="outlookCTAURL" mktoname="Outlook Cal URL" default> 
+    <!--SUSECON module variables --> 
+    <meta mktomodulescope="true" class="mktoString" id="suseconCTA-URL" mktoname="SUSECON URL" default="https://www.suse.com/susecon"> 
+    <meta mktomodulescope="true" class="mktoString" id="suseconCTA-label" mktoname="SUSECON CTA Label" default="Register today"> 
+    <!-- Section03 Tags --> 
+    <meta mktomodulescope="true" class="mktoString" id="sec3-heading" mktoname="Heading" default="Talk to an expert"> 
+    <meta mktomodulescope="true" class="mktoString" id="sec3-text" mktoname="Text" default="Connect with our team now. Chat or schedule a call."> 
+    <!-- Spacer Meta Tags --> 
+    <style>
+      /* import SUSE font */
+      @import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+      body {
+        font-family: 'SUSE', Verdana, serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style> 
+    <style media="all">
+      /* CLIENT-SPECIFIC STYLES */
+      #outlook a {
+        padding: 0;
+      }
+
+      /* Force Outlook to provide a "view in browser" message */
+      .ReadMsgBody {
+        width: 100%;
+      }
+
+      .ExternalClass {
+        width: 100%;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      /* Force Hotmail to display emails at full width */
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass span,
+      .ExternalClass font,
+      .ExternalClass td,
+      .ExternalClass div {
+        line-height: 100%;
+      }
+
+      /* Force Hotmail to display normal line spacing */
+      /* iOS BLUE LINKS */
+      .appleBody a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      .appleFooter a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      @-ms-viewport {
+        width: device-width;
+      }
+
+      :root {
+        color-scheme: light dark;
+        supported-color-schemes: light dark;
+      }
+
+      table,
+      tr,
+      td {
+        border: 0px;
+        padding: 0px;
+        margin: 0px;
+        border-collapse: collapse;
+      }
+
+      /* Responsive rules */
+      @media (max-width: 600px) {
+        .column-60,
+        .column-40 {
+          width: 100%;
+        }
+
+        .maintable {
+          width: 100% !important;
+          min-width: 100% !important;
+        }
+
+        .borderbottom-mobile {
+          border-right: none !important;
+        }
+
+        .pad-tp {
+          padding-top: 29px !important;
+        }
+        .height-t15 {
+          height: 15px;
+        }
+        .innertable {
+          width: 90% !important;
+        }
+        .innertable-2 {
+          width: 250px !important;
+        }
+
+        .mobile-width-td,
+        .mobileWidthImg img {
+          width: 85px !important;
+        }
+
+        .block {
+          width: 100% !important;
+          display: block !important;
+          box-sizing: border-box;
+        }
+
+        .center {
+          text-align: center !important;
+        }
+
+        .xs_height24 {
+          height: 24px !important;
+        }
+
+        h1 {
+          font-size: 26px !important;
+        }
+      }
+
+      /* GLOBAL */
+      body {
+        background: #f1f1f1;
+        font-family: 'SUSE', Verdana, serif;
+        font-weight: 400;
+        font-size: 16px;
+      }
+
+      .email-bg {
+        background-color: #fffffe;
+      }
+
+      .default-font-style {
+        font-family: 'SUSE', Verdana, serif;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: left;
+      }
+
+      p {
+        font-weight: 400;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 500;
+        vertical-align: top;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 28px;
+        line-height: 1.3em;
+      }
+
+      h2 {
+        font-size: 24px;
+        line-height: 1.3em;
+        margin-top: 0em;
+        margin-bottom: 1em;
+        font-weight: 500;
+      }
+
+      h3 {
+        font-size: 22px;
+        line-height: 1.3em;
+        font-weight: 500;
+        vertical-align: top;
+        margin: 0;
+      }
+
+      h4 {
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 0em;
+        margin-bottom: 0em;
+      }
+
+      /* ENDS Global */
+
+      /* MODULE: free text */
+      li {
+        margin-top: 10px;
+      }
+
+      .list-bullet {
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+        background: #31ba78;
+        width: 7px;
+        height: 7px;
+      }
+
+      ul {
+        padding: 15px;
+      }
+
+      /* MODULE: Speakers and Agenda */
+
+      .column-60,
+      .column_speaker-details,
+      .column-40,
+      .column_speaker-img {
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .column-padding {
+        padding: 15px;
+        box-sizing: border-box;
+      }
+
+      .mb-m {
+        margin-bottom: 30px;
+      }
+
+      .mb-s {
+        margin-bottom: 20px;
+      }
+
+      .ml-xs {
+        margin-left: 10px;
+      }
+
+      .column_speaker-details {
+        width: 140px;
+        padding-top: 8px;
+      }
+
+      .column-60 {
+        width: 350px;
+      }
+
+      .column-40 {
+        width: 240px;
+      }
+
+      .column_speaker-img {
+        width: 50px;
+      }
+
+      .agenda-time {
+        color: #31ba78;
+        font-weight: 700;
+      }
+
+      .speaker_name {
+        color: #000001;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.5em;
+      }
+
+      .speaker_job-title {
+        color: #31ba78;
+      }
+
+      .speaker-image-size {
+        width: 50px;
+      }
+
+      .hide {
+        display: none;
+        visibility: hidden;
+      }
+
+      /* ENDS MODULE: Speakers and Agenda */
+    </style> 
+    <style type="text/css">
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+
+      .text-darkgreen {
+        color: #0e322c;
+      }
+
+      .font-s {
+        font-size: 15px;
+      }
+
+      .center-align {
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      .white-background-header {
+        background-color: #fffffe;
+        background-image: url(https://more.suse.com/rs/937-DCH-261/images/white-background-rancher.png);
+        background-repeat: repeat;
+      }
+
+      .event-details {
+        background-color: #efefef;
+        padding: 20px;
+      }
+      .black-text {
+        color: #000001;
+      }
+      a.black-text {
+        color: #000001 !important;
+      }
+      @media screen and (prefers-color-scheme: dark) {
+        .speaker_name,
+        .agenda-title,
+        .text-darkgreen,
+        .text-black,
+        a.text-black {
+          color: #fffffe !important;
+        }
+        .border-white {
+          border-color: lightgray !important;
+        }
+        .white-background-header,
+        [data-ogsc] .white-background-header {
+          background-color: #fffffe !important;
+          background-image: url(https://more.suse.com/rs/937-DCH-261/images/white-background-rancher.png) !important;
+          background-repeat: repeat !important;
+        }
+        span.text-black,
+        [data-ogsc] span.text-black {
+          color: #ffffff !important;
+          mso-style-textfill-fill-color: #ffffff;
+        }
+        [data-ogsc] .bluecolor,
+        .bluecolor {
+          color: #fffffe !important;
+        }
+
+        [data-ogsc] .darkMode,
+        .darkMode {
+          background: #222222 !important;
+          color: #fffffe;
+        }
+        [data-ogsc] .border-white {
+          border-color: lightgray !important;
+        }
+
+        [data-ogsc] .darkMode4,
+        .darkMode4 {
+          background: #0c322c !important;
+          color: #fffffe;
+        }
+
+        .event-details {
+          background-color: #494949;
+        }
+
+        .email-bg {
+          background-color: #222222;
+        }
+      }
+    </style> 
+    <!--[if gte mso 9]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG />
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    <![endif]--> 
+    <!--[if gte mso 16]>
+      <style>
+        a {
+          text-decoration: none;
+        }
+      </style>
+    <![endif]--> 
+    <!-- litmus analytics: webinar email --> 
+    <style data-ignore-inlining>
+      @media (prefers-color-scheme: dark) {
+        #_t::before {
+          content: url('https://igioo1uj.emltrk.com/v2/igioo1uj?rd&i={{lead.ID}}');
+        }
+      }
+      @media (prefers-color-scheme: light) {
+        #_t::before {
+          content: url('https://igioo1uj.emltrk.com/v2/igioo1uj?rl&i={{lead.ID}}');
+        }
+      }
+      @media print {
+        #_t {
+          background-image: url('https://igioo1uj.emltrk.com/v2/igioo1uj?p&i={{lead.ID}}');
+        }
+      }
+      div.OutlookMessageHeader {
+        background-image: url('https://igioo1uj.emltrk.com/v2/igioo1uj?f&i={{lead.ID}}');
+      }
+      table.moz-email-headers-table {
+        background-image: url('https://igioo1uj.emltrk.com/v2/igioo1uj?f&i={{lead.ID}}');
+      }
+      blockquote #_t {
+        background-image: url('https://igioo1uj.emltrk.com/v2/igioo1uj?f&i={{lead.ID}}');
+      }
+      #MailContainerBody #_t {
+        background-image: url('https://igioo1uj.emltrk.com/v2/igioo1uj?f&i={{lead.ID}}');
+      }
+    </style> 
+  </head>
+  <body class="body" style="
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: none;
+      width: 100%;
+      height: 100% !important;
+      font-family: 'SUSE', Verdana, serif;
+      text-align: left;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: none;
+      margin: 0;
+      padding: 0;
+    ">
+    <div id="_t"></div> 
+    <img src="https://igioo1uj.emltrk.com/v2/igioo1uj?i={{lead.ID}}" width="1" height="1" border="0" alt="">   
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="
+        width: 100%;
+        margin: 0 auto;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      "> 
+      <tbody> 
+        <tr> 
+          <!-- body background --> 
+          <td class="email-bg"> 
+            <!-- Container table --> 
+            <table role="presentation" width="600" align="center" class="mktoContainer maintable" id="template-wrapper" style="
+                border-collapse: collapse;
+                margin: 0 auto;
+                width: 600px;
+                min-width: 600px;
+              ">
+             <!--- <tr class="mktoModule" id="viewAsWebpage" mktoname="View As Webpage" width="100%"> 
+                <td> 
+                  <div id="viewAsWebpageText" mktoname="View As Webpage Text"> 
+                    <p style="font-size:10px; font-family:'Poppins',Verdana, sans-serif; line-height:25px; text-align:right; margin:0px; padding:0px;"> {{my.viewText1}} <a href="{{system.viewAsWebpageLink}}" style="color:#00cd62" target="_blank">{{my.viewText2}}</a> </p> 
+                  </div> </td> -->
+              </tr>
+              <tr class="mktoModule" id="header-module" mktoname="SUSE header"> 
+                <td style="background-color: #0C322C;"> 
+                  <table width="600" style="width: 600px; background-color: #0C322C;" cellpadding="0" cellspacing="0" border="0"> 
+                    <tbody> 
+                      <tr> 
+                        <td style="padding: 20px;"> <a href="https://www.suse.com/" target="_blank"> <img src="https://more.suse.com/rs/937-DCH-261/images/suse-logo-2020.png" width="auto" alt="SUSE" height="30" style="height: 30px; width: auto;"> </a> </td> 
+                      </tr> 
+                    </tbody> 
+                  </table> </td> 
+              </tr>
+              <tr class="mktoModule" id="Stripe" mktoname="Stripe Section"> 
+                <td style="padding:0px;"> 
+                  <table width="100%" align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0" border="0"> 
+                    <tbody> 
+                      <tr> 
+                        <td height="7" width="70" style="width:70px; font-size:1px; line-height:1px; height:7px; background-color: #0e322c;"> &nbsp;</td> 
+                        <td height="7" width="145" style="font-size:1px; line-height:1px; height:7px; background-color:#40b87c;">&nbsp; </td> 
+                        <td height="7" width="141" style="width:141px; font-size:1px; line-height:1px; height:7px; background-color:#93eacd;"> &nbsp;</td> 
+                        <td height="7" width="175" style="width:175px; font-size:1px; line-height:1px; height:7px; background-color:#fc7c48;"> &nbsp;</td> 
+                        <td height="7" width="36" style="width:36px; font-size:1px; line-height:1px; height:7px; background-color:#0076ff;"> &nbsp;</td> 
+                      </tr> 
+                    </tbody> 
+                  </table> </td> 
+              </tr>
+              <tr class="mktoModule darkMode" id="Freetext" mktoname="Free text Section"> 
+                <td> 
+                  <table role="presentation" class="deviceWidth1" width="560" style="border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin:0 auto;width:560px;" align="center" cellpadding="0" cellspacing="0" border="0"> 
+                    <tbody> 
+                      <tr> 
+                        <td height="20" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+                      </tr> 
+                      <tr> 
+                        <td> 
+                          <div class="default-font-style Freetext_content mktoText" id="Freetext_content" mktoname="Free text content">
+                            <p><br></p> 
+                            <h3>Future-Proof Your AWS Linux with a New Open-Source Strategy</h3> 
+                            <p style="font-size:14pt; font-family:SUSE, sans-serif; line-height:1.4; background-color:transparent; font-weight:400; font-variant:normal; text-decoration:none; vertical-align:baseline;">
+                                Digital sovereignty and enterprise flexibility are reshaping Linux. Watch our Tech Talk to learn SUSE's strategy for RHEL, CentOS, and multi-distro support on AWS. We cover extended lifecycle options and how to future-proof your infrastructure with confidence. An exclusive SUSE promotion for AWS customers ends this month!
+                              </p>
+                              
+                          </div> </td> 
+                      </tr> 
+                      <tr> 
+                        <td height="20" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+                      </tr> 
+                    </tbody> 
+                  </table> </td> 
+              </tr>
+              <tr class="mktoModule darkMode" id="CTA_Module2327beccc-e84b-4e1c-89b9-92698b99865c" mktoname="CTA Module"> 
+                <td align="center"> 
+                  <table class="darkMode" role="presentation" style="background-color:#fffffe; border-spacing: 0; border-collapse: collapse;" align="center" border="0" cellpadding="0" cellspacing="0"> 
+                    <tbody> 
+                      <tr> 
+                        <td height="30" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+                      </tr> 
+                      <tr> 
+                        <td class="Wd-Mob" style="font-family: 'Poppins', sans-serif; font-size:14px; text-align:center; vertical-align: middle; color: #000001;display: block; padding: 12px 30px;line-height: 22px; font-weight: 500;mso-line-height-rule:exactly !important; margin: 0; background: #FE7C3F" valign="middle"> <a style="text-decoration: none; color: #000001; border-radius: 100px; min-width: 200px; padding: 0 20px" href="https://1105media-my.sharepoint.com/:v:/p/amalepe/EXJ1YCMxJglGlB4LPJth3IQBQnA0L8VRNEi34K6V9z1ydg?e=Sf84HF"> Watch The Recording Now</a> </td> 
+                      </tr> 
+                      <tr> 
+                        <td height="30" style="line-height:1px;font-size:1px;">&nbsp;</td> 
+                      </tr> 
+                    </tbody> 
+                  </table> </td> 
+              </tr>
+              <tr class="mktoModule" id="Footer" style="margin:0 auto;" mktoname="Footer Section"> 
+                <td class="darkMode4" style="background-color: #0C322C;"> 
+                  <table width="560" align="center" class="innertable" style="margin:0 auto;" cellpadding="0" cellspacing="0" border="0"> 
+                    <tbody> 
+                      <tr> 
+                        <td height="20" style="font-size: 1px; line-height: 1px;">&nbsp;</td> 
+                      </tr> 
+                      <tr> 
+                        <td> 
+                          <div class="mktoSnippet" id="Footer-snippet" mktoname="Footer Snippet"> 
+                            <div> 
+                              <div class="text-center" style="margin-bottom: 28px; text-align: center;">
+                                <a href="https://www.facebook.com/SUSEWorldwide" target="_blank" style="text-decoration: none;"> <img src="https://more.suse.com/rs/937-DCH-261/images/SUSE-Icon-ionic-logo-facebook.png" alt="Facebook" width="21" border="0"> </a> &nbsp;&nbsp;&nbsp; 
+                                <a href="https://twitter.com/SUSE" target="_blank" style="text-decoration: 
+none;"> <img src="https://more.suse.com/rs/937-DCH-261/images/SUSE-Icon-awesome-twitter.png" alt="Twitter" width="25" border="0"> </a> &nbsp;&nbsp;&nbsp; 
+                                <a href="https://www.instagram.com/lifeatsuse/" target="_blank" style="text-decoration: none;"> <img src="https://more.suse.com/rs/937-DCH-261/images/SUSE-Icon-feather-instagram.png" alt="Instagram" width="19" border="0"> </a> &nbsp;&nbsp;&nbsp; 
+                                <a href="https://www.linkedin.com/company/suse/" target="_blank" style="text-decoration: none;"> <img src="https://more.suse.com/rs/937-DCH-261/images/SUSE-Icon-awesome-linkedin.png" alt="LinkedIn" width="19" border="0"> </a> &nbsp;&nbsp;&nbsp; 
+                                <a href="https://www.youtube.com/suse" target="_blank" style="text-decoration: none;"> <img src="https://more.suse.com/rs/937-DCH-261/images/SUSE-Icon-simple-youtube.png" alt="Youtube" width="25" border="0"> </a>
+                              </div> 
+                              <table class="innertable" style="width: 455px; margin: 0 auto;" width="455" cellspacing="0" cellpadding="0" border="0" align="center"> 
+                                <tbody> 
+                                  <tr> 
+                                    <td style="font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 500; line-height: 2; color: #fff; text-align: center; mso-line-height-rule: exactly;" align="center"> 
+                                      <div>
+                                        Copyright © 2025 SUSE, All rights reserved.
+                                        <br> 
+                                        <a href="{{system.unsubscribeLink}}" style="color: #30ba78; text-decoration: underline; outline: 0;">Unsubscribe</a> 
+                                        <br> 
+                                        <br> Frankenstraße 146, 90461 Nürnberg, Germany
+                                        <br> 
+                                        <br> You are receiving this marketing communication from SUSE because you have either previously opted in to communications or we believe there is a legitimate business reason to contact you regarding SUSE products and services. Please visit the 
+                                        <a href="https://www.suse.com/company/subscribe/" target="_blank" style="text-decoration: underline; outline: 0; color: #30ba78;">SUSE Subscription Management page</a> if you would like to decline any further notifications. All third party trademarks are the property of the respective owners.
+                                      </div> </td> 
+                                  </tr> 
+                                </tbody> 
+                              </table> 
+                            </div> 
+                          </div> </td> 
+                      </tr> 
+                      <tr> 
+                        <td height="40" style="font-size: 1px; line-height: 1px;">&nbsp;</td> 
+                      </tr> 
+                    </tbody> 
+                  </table> </td> 
+              </tr>
+            </table> </td> 
+        </tr> 
+      </tbody> 
+    </table>   
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"98ad4d56e8b8514c","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.9.1","token":"271854501d8743cfb7cc749ee8f2dde0"}' crossorigin="anonymous"></script>
+</body>
+</html>
