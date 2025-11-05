@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ashley Malepe — My Portfolio</title>
 
-  <!-- Fonts -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Original site styling (extracted & cleaned) -->
+  
   <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
   <div class="container">
     <header class="hero-section">
-      <div class="profile-image" id="profileImage" style="background-image:url('ashleymalepeprofilepicture.jpg')">
+      <div class="profile-image" id="profileImage" style="background-image:url('ashleymalepeprofilepicture.png')">
         <div class="profile-picture" id="profilePictureFill"></div>
       </div>
 
@@ -36,7 +36,7 @@
     </header>
 
     <main id="mainContent" class="portfolio-container">
-      <!-- Sections injected by JS -->
+     
     </main>
 
     <footer class="footer">
@@ -47,14 +47,14 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Fetch JSON and render sections using original markup style (cards/slides)
+    
     async function loadData() {
       try {
         const res = await fetch('portfolio-data.json', {cache: 'no-store'});
         if (!res.ok) throw new Error('portfolio-data.json not found');
         const data = await res.json();
 
-        // set profile picture
+      
         if (data.profilePicture) document.getElementById('profileImage').style.backgroundImage = `url('${data.profilePicture}')`;
 
         const main = document.getElementById('mainContent');
