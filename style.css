@@ -69,30 +69,30 @@ body{
   box-shadow: 0 26px 60px rgba(33,42,77,0.14);
 }
 
-/* inner "photo container" — keeps uploaded image inside ring */
+/* inner "photo container" — final Instagram-style behavior */
 .profile-picture{
   position:absolute;
-  inset:6px; /* match outer padding so inner sits perfectly */
+  inset:6px; 
   border-radius:50%;
-  background-size: contain;      /* IMPORTANT: contain shows entire face (no aggressive crop) */
+  background-size: cover;      
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #fff;        /* neutral fill when image aspect ratio differs */
+  background-color: transparent; 
   transition: transform var(--transition-fast), filter var(--transition-fast);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06) inset;
+  box-shadow: none; 
   z-index:2;
 }
 
-/* fallback if you inject an <img> inside .profile-picture (keeps logic robust) */
+/* fallback <img> support */
 .profile-picture img{
   width:100%;
   height:100%;
-  object-fit:contain; /* keeps the whole face visible, prevents zoom/crop */
+  object-fit:cover; 
   border-radius:50%;
   display:block;
 }
 
-/* optional small sparkle ring animation (subtle, not flashy) */
+/* optional soft sparkle depth to mimic premium IG feel */
 .profile-image::after{
   content:"";
   position:absolute;
@@ -104,6 +104,7 @@ body{
               radial-gradient(circle at 70% 80%, rgba(255,255,255,0.15), transparent 10%);
   mix-blend-mode: screen;
 }
+
 
 /* HERO TEXT */
 .hero-text{flex:1; min-width:220px}
