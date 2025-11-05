@@ -1,49 +1,6 @@
-:root {
-  --bg: #f8fafe;
-  --accent1: #ff6b6b;
-  --accent2: #667eea;
-  --muted: #5d6d7e;
-  --surface: rgba(255, 255, 255, 0.85);
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --radius: 18px;
-  --transition: all 0.35s ease;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(135deg, var(--bg) 0%, #e8f4f8 100%);
-  color: #2c3e50;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* === HERO SECTION === */
-.hero-section {
-  text-align: center;
-  padding: 4rem 0;
-  position: relative;
-}
-
-/* === INSTAGRAM-STYLE PROFILE PICTURE === */
+/* === FIX: Instagram-style profile ring without breaking upload logic === */
 .profile-image {
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
+  position: relative;
   background: conic-gradient(
     from 220deg,
     #f58529,
@@ -52,13 +9,14 @@ body {
     #515bd4,
     #29aadc
   );
+  padding: 4px; /* gives the ring */
+  border-radius: 50%;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 2rem;
-  padding: 5px;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
 }
 
 .profile-image:hover {
@@ -66,142 +24,50 @@ body {
 }
 
 .profile-picture {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 4px; /* stays inside ring */
   border-radius: 50%;
-  background-size: contain; /* fixes zoom issue */
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
   background-color: #fff;
-  transition: var(--transition);
 }
 
-/* === HEADINGS === */
-.name {
-  font-size: 3rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 0.5rem 0;
-}
-
-.title {
-  font-size: 1.4rem;
-  color: var(--muted);
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.tagline {
-  font-size: 1.1rem;
-  color: var(--muted);
-  max-width: 650px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
-}
-
-/* === BUTTONS === */
-.cta-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
+/* === FIX: Buttons - professional lift effect === */
 .btn {
-  padding: 0.9rem 2.2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  border: none;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
-  color: white;
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-.btn-secondary {
-  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
-  color: white;
-}
-.btn-outline {
-  background: rgba(255, 255, 255, 0.9);
-  border: 2px solid #ddd;
-  color: #2c3e50;
-}
-.btn-admin {
-  background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
-  color: white;
+
+.btn:hover::after {
+  opacity: 1;
 }
 
 .btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* === CONTACT INFO === */
-.contact-info {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2.5rem;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--muted);
-  font-size: 1rem;
-}
-
-.icon {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-}
-
-/* === PORTFOLIO IMAGES === */
-.card-image,
+/* === FIX: Portfolio images not displaying properly === */
 .placeholder-image img {
-  border-radius: 12px;
-  background-size: contain !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
+  width: 100%;
+  height: 100%;
   object-fit: contain !important;
-  transition: var(--transition);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
 }
 
-.card-image:hover,
 .placeholder-image img:hover {
   transform: scale(1.03);
 }
-
-/* === FLOATING ELEMENTS === */
-.decorative-elements .floating-shape {
-  opacity: 0.15;
-  filter: blur(3px);
-  animation: float 6s ease-in-out infinite;
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(180deg); }
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .name { font-size: 2.3rem; }
-  .profile-image { width: 150px; height: 150px; }
-  .cta-buttons { flex-direction: column; align-items: center; }
-  .btn { width: 100%; max-width: 300px; justify-content: center; }
-}
-
